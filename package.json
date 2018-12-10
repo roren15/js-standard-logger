@@ -1,0 +1,30 @@
+{
+  "name": "standard-logger",
+  "version": "1.0.0",
+  "main": "logger.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "description": "A useful standard Logger for JS",
+  "homepage": "",
+  "author": {
+    "name": "roren",
+    "email": "13204611934@126.com",
+    "url": ""
+  },
+  "keywords": [
+    "logger",
+    "usalful winston"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "winston": "^3.0.0",
+    "fs-extra": "^7.0.0",
+    "circular-json": "^0.5.9"
+  },
+  "readmeFilename": "README.md",
+  "license": "LINCENSE"
+}
