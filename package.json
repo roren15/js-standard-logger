@@ -1,16 +1,16 @@
 {
-  "name": "standard-logger",
-  "version": "1.0.0",
+  "name": "js-standard-logger",
+  "version": "1.0.1",
   "main": "logger.js",
   "scripts": {
     "test": "test.js"
   },
   "description": "A useful standard Logger for JS",
-  "homepage": "",
+  "homepage": "https://github.com/roren15/js-standard-logger",
   "author": {
-    "name": "roren",
+    "name": "roren15",
     "email": "13204611934@126.com",
-    "url": ""
+    "url": "https://github.com/roren15"
   },
   "keywords": [
     "logger",
@@ -18,7 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/roren15/js-standard-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roren15/js-standard-logger/issues"
   },
   "dependencies": {
     "winston": "^3.0.0",

@@ -1,4 +1,4 @@
-# standard-logger
+# js-standard-logger
 
 A useful standard Logger for JS, based on winston
 
