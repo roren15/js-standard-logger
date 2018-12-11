@@ -29,7 +29,7 @@ logger.exceptionThrows('log and throw err') // do log and throw err, which requi
 
 ## 3. api
 
-### init
+### Init
 
 ```
 const Logger = require('standard-logger')
