@@ -11,7 +11,7 @@ module.exports = {
   },
 
   /**
-   * 是对象就判断对象是否为非空对象
+   * check not empty for object
    * @param obj
    * @returns {boolean}
    */
@@ -28,7 +28,7 @@ module.exports = {
   },
 
   /**
-   * 是数组就判断是否为空,否则返回true
+   * check not empty for array
    * @param array
    * @returns {boolean}
    */

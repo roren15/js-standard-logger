@@ -1,9 +1,9 @@
 {
   "name": "js-standard-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "logger.js",
   "scripts": {
-    "test": "test.js"
+    "test": "node test.js"
   },
   "description": "A useful standard Logger for JS",
   "homepage": "https://github.com/roren15/js-standard-logger",

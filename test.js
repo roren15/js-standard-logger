@@ -5,8 +5,8 @@ const logger = new Logger('/data/logs/logger-sample/', 'app.log')
 
 try {
   logger.exec('it s info')
-  logger.exec('it s err', Logger.ERROR())
-  logger.exceptionThrows('throw err')
+  logger.exec(`${Logger.stringify({it: 'can be object', also: ['can', 'be', 'array']})}`, Logger.WARN())
+  logger.exceptionThrows('log and throw err')
 } catch (err) {
   logger.exec('catch err for warn', Logger.WARN())
 }
