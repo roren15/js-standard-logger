@@ -1,6 +1,6 @@
 {
   "name": "js-standard-logger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "logger.js",
   "scripts": {
     "test": "node test.js"

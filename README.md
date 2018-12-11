@@ -44,32 +44,32 @@ const logger = new Logger('dir_path_to_save_log', 'log_name.log','label_to_tag')
 
 ### Function
 
-#### logger.exec
+#### logger.exec()
 
-|Field|required|description|
+|arguments|required|description|
 |:------:|------|------|
 |message|true|message to log|
 |level|false|tag the label according to level field|
 
-#### logger.exceptionThrows
+#### logger.exceptionThrows()
 
-|Field|required|description|
+|arguments|required|description|
 |:------:|------|------|
 |message|true|message to log|
 |level|false|tag the label according to level field|
 
-#### logger.stringify
+#### logger.stringify()
 
-|Field|required|description|
+|arguments|required|description|
 |:------:|------|------|
 |object|true|stringify object type to do log|
 
 ### Field
 
-| Field | Level | Description |
+| Fields | Level | Description |
 |:------:|:------:|------|
-| Logger.debug | debug | tags for development debug |
-| Logger.info | information | tags for information |
-| Logger.warn | warning | tags for that be bad for some features |
-| Logger.error | error | tags for that intercept process or functional crash |
+| Logger.debug() | debug | tags for development debug |
+| Logger.info() | information | tags for information |
+| Logger.warn() | warning | tags for that be bad for some features |
+| Logger.error() | error | tags for that intercept process or functional crash |
 
