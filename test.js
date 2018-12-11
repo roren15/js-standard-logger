@@ -1,7 +1,7 @@
 'use strict'
 
 const Logger = require('./logger')
-const logger = new Logger('/data/logs/logger-sample/', 'app.log')
+const logger = new Logger('/data/logs/logger-sample/', 'app.log', 'default-label')
 
 try {
   logger.exec('it s info')

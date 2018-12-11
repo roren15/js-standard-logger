@@ -1,6 +1,7 @@
 # js-standard-logger
 
-A useful standard Logger for JS, based on winston
+A useful standard Logger for JS, based on winston, formatting output for logger.
+Common as: ` [2018-12-11 09:41:19] [info] [default-label] --- it s info `
 
 ## 1. install
 
@@ -17,11 +18,58 @@ const logger = new Logger('/data/logs/log-save-dir/', 'log-name.log','default-la
 
 
 logger.exec('it s info') // default for info level output
-//[2018-12-11 09:41:19] [info] [DEFAULT] --- it s info
+//[2018-12-11 09:41:19] [info] [default-label] --- it s info
 
 logger.exec(`${Logger.stringify({it:'can be object',also:['can','be','array']})}`,Logger.WARN()) // choose diff level
-//[2018-12-11 09:41:19] [warn] [DEFAULT] --- {"it":"can be object","also":["can","be","array"]}
+//[2018-12-11 09:41:19] [warn] [default-label] --- {"it":"can be object","also":["can","be","array"]}
 
 logger.exceptionThrows('log and throw err') // do log and throw err, which required try-catch
-//[2018-12-11 09:41:19] [error] [DEFAULT] --- log and throw err
+//[2018-12-11 09:41:19] [error] [default-label] --- log and throw err
 ```
+
+## 3. api
+
+### init
+
+```
+const Logger = require('standard-logger')
+const logger = new Logger('dir_path_to_save_log', 'log_name.log','label_to_tag')
+```
+
+|Field|required|description|
+|:------:|------|------|
+|log_save_dir|true|dir path to save log (auto mkdir if not exists)|
+|log_name|true|eg. "app.log"|
+|label|false|label to differ log|
+
+### Function
+
+#### logger.exec
+
+|Field|required|description|
+|:------:|------|------|
+|message|true|message to log|
+|level|false|tag the label according to level field|
+
+#### logger.exceptionThrows
+
+|Field|required|description|
+|:------:|------|------|
+|message|true|message to log|
+|level|false|tag the label according to level field|
+
+#### logger.stringify
+
+|Field|required|description|
+|:------:|------|------|
+|object|true|stringify object type to do log|
+
+### Field
+
+| Field | Level | Description |
+|:------:|:------:|------|
+| Logger.debug | debug | tags for development debug |
+| Logger.info | information | tags for information |
+| Logger.warn | warning | tags for that be bad for some features |
+| Logger.error | error | tags for that intercept process or functional crash |
+
