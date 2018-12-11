@@ -1,7 +1,7 @@
 # js-standard-logger
 
-A useful standard Logger for JS, based on winston, formatting output for logger.
-Common as: ` [2018-12-11 09:41:19] [info] [default-label] --- it s info `
+A useful standard Logger for JS, based on winston, formatting simple output for log, saving to demanded path.
+Common output as: ` [2018-12-11 09:41:19] [info] [default-label] --- it s info `
 
 ## 1. install
 
