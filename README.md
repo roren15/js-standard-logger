@@ -6,14 +6,14 @@ Common output as: ` [2018-12-11 09:41:19] [info] [default-label] --- it s info `
 ## 1. install
 
 ```bash
-$ npm install --save
+$ npm install --save js-standard-logger
 ```
 
 ## 2. usage
 
 ```javascript
 
-const Logger = require('standard-logger')
+const Logger = require('js-standard-logger')
 const logger = new Logger('/data/logs/log-save-dir/', 'log-name.log','default-label') // initialize
 
 
@@ -36,7 +36,7 @@ const Logger = require('standard-logger')
 const logger = new Logger('dir_path_to_save_log', 'log_name.log','label_to_tag')
 ```
 
-|Field|required|description|
+|arguments|required|description|
 |:------:|------|------|
 |log_save_dir|true|dir path to save log (auto mkdir if not exists)|
 |log_name|true|eg. "app.log"|
