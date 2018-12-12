@@ -58,7 +58,7 @@ const logger = new Logger('dir_path_to_save_log', 'log_name.log','label_to_tag')
 |message|true|message to log|
 |level|false|tag the label according to level field|
 
-#### logger.stringify()
+#### Logger.stringify()
 
 |arguments|required|description|
 |:------:|------|------|
