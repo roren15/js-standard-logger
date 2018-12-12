@@ -1,6 +1,6 @@
 {
   "name": "js-standard-logger",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "logger.js",
   "scripts": {
     "test": "node test.js"
@@ -13,8 +13,18 @@
     "url": "https://github.com/roren15"
   },
   "keywords": [
+    "log",
     "logger",
-    "usalful winston"
+    "logging",
+    "logs",
+    "loglevel",
+    "tools",
+    "timestamp",
+    "save",
+    "standard",
+    "pretty",
+    "output",
+    "useful winston"
   ],
   "repository": {
     "type": "git",
