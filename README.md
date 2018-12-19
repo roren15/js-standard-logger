@@ -37,7 +37,7 @@ const logger = new Logger('dir_path_to_save_log', 'log_name.log','label_to_tag')
 ```
 
 |arguments|required|description|
-|:------:|------|------|
+|:------:|:------:|------|
 |log_save_dir|true|dir path to save log (auto mkdir if not exists)|
 |log_name|true|eg. "app.log"|
 |label|false|label to differ log|
@@ -46,25 +46,33 @@ const logger = new Logger('dir_path_to_save_log', 'log_name.log','label_to_tag')
 
 #### logger.exec()
 
+Do log on message with different level
+
 |arguments|required|description|
-|:------:|------|------|
+|:------:|:------:|------|
 |message|true|message to log|
-|level|false|tag the label according to level field|
+|level|false|tag the label according to level field, default to info|
 
 #### logger.exceptionThrows()
 
+Do log on message and throw error, which recommended to catch outside
+
 |arguments|required|description|
-|:------:|------|------|
+|:------:|:------:|------|
 |message|true|message to log|
-|level|false|tag the label according to level field|
+|level|false|tag the label according to level field, default to error|
 
 #### Logger.stringify()
 
+Transform object to string for log
+
 |arguments|required|description|
-|:------:|------|------|
+|:------:|:------:|------|
 |object|true|stringify object type to do log|
 
 ### Field
+
+Different level fields to choose
 
 | Fields | Level | Description |
 |:------:|:------:|------|
