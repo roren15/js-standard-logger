@@ -32,7 +32,7 @@ logger.exceptionThrows('log and throw err') // do log and throw err, which requi
 
 ### Init
 
-```
+```javascript
 const Logger = require('standard-logger')
 const logger = new Logger('dir_path_to_save_log', 'log_name.log','label_to_tag')
 ```
