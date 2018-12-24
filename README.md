@@ -1,7 +1,7 @@
 # js-standard-logger
 
 A useful standard Logger for JS, based on winston, formatting simple output for log, saving to demanded path.
-Common output as: ` [2018-12-11 09:41:19] [info] [default-label] --- it s info `
+Common output as: ` [2018-12-11 09:41:19] [info] [sample-label] --- it s info `
 
 [![npm install js-standard-logger](https://nodei.co/npm/js-standard-logger.png?mini=true)](https://www.npmjs.com/package/js-standard-logger)
 
@@ -34,7 +34,8 @@ logger.exceptionThrows('log and throw err') // do log and throw err, which requi
 
 ### Init
 
-Initialize logger instance, recommended to store globally
+Initialize logger instance, recommended to store globally. 
+Please fill with absolute path.
 
 ```javascript
 const Logger = require('js-standard-logger')
