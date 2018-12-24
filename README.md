@@ -15,33 +15,37 @@ $ npm install --save js-standard-logger
 
 ```javascript
 const Logger = require('js-standard-logger')
-const logger = new Logger('/data/logs/log-save-dir/', 'log-name.log','default-label') // initialize
+const logger = new Logger('/data/logs/logger-sample/') // simply initialize
 
+
+logger.setLabel('sample-label') // change label displayed
 
 logger.exec('it s info') // default for info level output
-//[2018-12-11 09:41:19] [info] [default-label] --- it s info
+//[2018-12-11 09:41:19] [info] [sample-label] --- it s info
 
 logger.exec(`${Logger.stringify({it:'can be object',also:['can','be','array']})}`,Logger.WARN()) // choose diff level
-//[2018-12-11 09:41:19] [warn] [default-label] --- {"it":"can be object","also":["can","be","array"]}
+//[2018-12-11 09:41:19] [warn] [sample-label] --- {"it":"can be object","also":["can","be","array"]}
 
 logger.exceptionThrows('log and throw err') // do log and throw err, which required try-catch
-//[2018-12-11 09:41:19] [error] [default-label] --- log and throw err
+//[2018-12-11 09:41:19] [error] [sample-label] --- log and throw err
 ```
 
 ## 3. Api
 
 ### Init
 
+Initialize logger instance, recommended to store globally
+
 ```javascript
-const Logger = require('standard-logger')
-const logger = new Logger('dir_path_to_save_log', 'log_name.log','label_to_tag')
+const Logger = require('js-standard-logger')
+const logger = new Logger('/data/logs/log-save-dir/', 'log-name.log','default-label') 
 ```
 
 |arguments|required|description|
 |:------:|:------:|------|
-|log_save_dir|true|dir path to save log (auto mkdir if not exists)|
-|log_name|true|eg. "app.log"|
-|label|false|label to differ log|
+|log_save_dir|true|dir abstract path to save log (auto mkdir if not exists)|
+|log_name|false|default to "app.log"|
+|label|false|label to differ log, default to log_name|
 
 ### Function
 
@@ -63,9 +67,17 @@ Do log on message and throw error, which recommended to catch outside
 |message|true|message to log|
 |level|false|tag the label according to level field, default to error|
 
+#### logger.setLabel()
+
+Set label for logger instance
+
+|arguments|required|description|
+|:------:|:------:|------|
+|label|true|label to differ log|
+
 #### Logger.stringify()
 
-Transform object to string for log
+Transform object to string when logging
 
 |arguments|required|description|
 |:------:|:------:|------|

@@ -6,6 +6,7 @@ const {format} = require('winston')
 const {combine, timestamp, label, printf} = format;
 const JSON = require('circular-json')
 const utils = require('./utils')
+const path = require('path')
 
 const formatter = printf(info => {
   return `[${info.timestamp}] [${info.level}] [${info.label}] --- ${info.message}`
@@ -16,15 +17,29 @@ const formatter = printf(info => {
  */
 class Logger {
 
-  constructor(log_save_dir, log_save_file, input_label = 'DEFAULT') {
-    if (!utils.checkArgsNotNull(arguments)) {
+  constructor(log_save_dir, log_save_file = 'app.log', input_label) {
+    if (!utils.checkArgsNotNull(...[log_save_dir])) {
       throw new Error('err arguments')
     }
     if (fs.emptyDirSync(log_save_dir)) {
       fs.mkdirpSync(log_save_dir)
     }
+    if (!input_label) {
+      input_label = log_save_file
+    }
     this._label = input_label
-    this._logger = this._initLogger(input_label, this._generateLoggerFileConfig(log_save_dir + log_save_file))
+    this._log_path = path.join(log_save_dir, log_save_file)
+    this._logger = null
+    this._init()
+  }
+
+  /**
+   * init Logger
+   * @private
+   */
+  _init() {
+
+    this._logger = this._initLogger(this._label, this._generateLoggerFileConfig(this._log_path))
   }
 
   /**
@@ -70,6 +85,15 @@ class Logger {
    */
   static stringify(data) {
     return JSON.stringify(data)
+  }
+
+  setLabel(label) {
+
+    if (!utils.checkArgsNotNull(...[label])) {
+      throw new Error('err arguments')
+    }
+    this._label = label
+    this._init()
   }
 
   /**
