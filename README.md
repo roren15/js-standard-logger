@@ -18,8 +18,6 @@ const Logger = require('js-standard-logger')
 const logger = new Logger('/data/logs/logger-sample/') // simply initialize
 
 
-logger.setLabel('sample-label') // change label displayed
-
 logger.exec('it s info') // default for info level output
 //[2018-12-11 09:41:19] [info] [sample-label] --- it s info
 
@@ -34,7 +32,6 @@ logger.exceptionThrows('log and throw err') // do log and throw err, which requi
 
 ### Init
 
-Initialize logger instance, recommended to store globally. 
 Please fill with absolute path.
 
 ```javascript
@@ -67,14 +64,6 @@ Do log on message and throw error, which recommended to catch outside
 |:------:|:------:|------|
 |message|true|message to log|
 |level|false|tag the label according to level field, default to error|
-
-#### logger.setLabel()
-
-Set label for logger instance
-
-|arguments|required|description|
-|:------:|:------:|------|
-|label|true|label to differ log|
 
 #### Logger.stringify()
 

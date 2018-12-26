@@ -87,15 +87,6 @@ class Logger {
     return JSON.stringify(data)
   }
 
-  setLabel(label) {
-
-    if (!utils.checkArgsNotNull(...[label])) {
-      throw new Error('err arguments')
-    }
-    this._label = label
-    this._init()
-  }
-
   /**
    * execute logger for diff level logging
    * @param message: logging message
