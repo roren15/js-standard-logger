@@ -44,6 +44,7 @@ const logger = new Logger('/data/logs/log-save-dir/', 'log-name.log','default-la
 |log_save_dir|true|dir abstract path to save log (auto mkdir if not exists)|
 |log_name|false|default to "app.log"|
 |label|false|label to differ log, default to log_name|
+|view_level|false|choose viewing output level, default to debug|
 
 ### Function
 
@@ -79,8 +80,8 @@ Different level fields to choose
 
 | Fields | Level | Description |
 |:------:|:------:|------|
-| Logger.debug() | debug | tags for development debug |
-| Logger.info() | information | tags for information |
-| Logger.warn() | warning | tags for that be bad for some features |
-| Logger.error() | error | tags for that intercept process or functional crash |
+| Logger.DEBUG() | debug | tags for development debug |
+| Logger.INFO() | information | tags for information |
+| Logger.WARN() | warning | tags for that be bad for some features |
+| Logger.ERROR() | error | tags for that intercept process or functional crash |
 

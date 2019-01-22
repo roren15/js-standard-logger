@@ -17,7 +17,7 @@ const formatter = printf(info => {
  */
 class Logger {
 
-  constructor(log_save_dir, log_save_file = 'app.log', input_label) {
+  constructor(log_save_dir, log_save_file = 'app.log', input_label, view_level = Logger.DEBUG()) {
     if (!utils.checkArgsNotNull(...[log_save_dir])) {
       throw new Error('err arguments')
     }
@@ -29,6 +29,7 @@ class Logger {
     }
     this._label = input_label
     this._log_path = path.join(log_save_dir, log_save_file)
+    this._view_level = view_level
     this._logger = null
     this._init()
   }
@@ -150,7 +151,8 @@ class Logger {
       transports: [
         new winston.transports.Console(),
         new winston.transports.File(loggerFileConfig)
-      ]
+      ],
+      level: this._view_level
     })
   }
 
