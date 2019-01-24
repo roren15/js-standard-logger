@@ -1,7 +1,7 @@
 'use strict'
 
 const Logger = require('./logger')
-const logger = new Logger('/data/logs/logger-sample', 'test.log', 'test', Logger.WARN())
+const logger = new Logger('/data/logs/logger-sample', 'test.log', 'test', Logger.INFO())
 
 try {
   logger.exec('it s info')

@@ -36,7 +36,7 @@ Please fill with absolute path.
 
 ```javascript
 const Logger = require('js-standard-logger')
-const logger = new Logger('/data/logs/log-save-dir/', 'log-name.log','default-label') 
+const logger = new Logger('/data/logs/log-save-dir/', 'log-name.log','default-label', Logger.INFO()) 
 ```
 
 |arguments|required|description|
@@ -44,7 +44,7 @@ const logger = new Logger('/data/logs/log-save-dir/', 'log-name.log','default-la
 |log_save_dir|true|dir abstract path to save log (auto mkdir if not exists)|
 |log_name|false|default to "app.log"|
 |label|false|label to differ log, default to log_name|
-|view_level|false|choose viewing output level, default to debug|
+|view_level|false|choose viewing output level, using Logger fields, default to debug|
 
 ### Function
 
