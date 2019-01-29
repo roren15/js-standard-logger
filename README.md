@@ -26,6 +26,12 @@ logger.exec(`${Logger.stringify({it:'can be object',also:['can','be','array']})}
 
 logger.exceptionThrows('log and throw err') // do log and throw err, which required try-catch
 //[2018-12-11 09:41:19] [error] [sample-label] --- log and throw err
+
+logger.exec('it s error', Logger.ERROR(), new TypeError('get type error')) // log err stack
+//[2019-01-29 09:29:43] [error] [test] --- it s error . err stack : TypeError: get type error
+//    at Object.<anonymous> (/home/roren/Documents/source/self/logger/test.js:9:45)
+//    at Module._compile (internal/modules/cjs/loader.js:686:14)
+//    ...
 ```
 
 ## 3. Api
@@ -56,6 +62,7 @@ Do log on message with different level
 |:------:|:------:|------|
 |message|true|message to log|
 |level|false|tag the label according to level field, default to info|
+|err|false|Error instance, will logged stack|
 
 #### logger.exceptionThrows()
 

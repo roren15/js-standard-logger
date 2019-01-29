@@ -92,12 +92,14 @@ class Logger {
    * execute logger for diff level logging
    * @param message: logging message
    * @param level: logging level
+   * @param err: (optional) Error instance
    * @returns {Promise<Error|String>} message
    */
-  async exec(message = {}, level = Logger.INFO()) {
+  async exec(message = {}, level = Logger.INFO(), err) {
 
     if (utils.checkFuncExists(level, this._logger)) {
-      this._logger[level](message)
+      const msg = utils.judgeNotNull(err) && err instanceof Error ? `${message} . err stack : ${err.stack}` : message
+      this._logger[level](msg)
     } else {
       const errMes = 'cannot find this level logger'
       this._logger.error(errMes)
