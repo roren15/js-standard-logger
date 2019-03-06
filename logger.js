@@ -122,8 +122,8 @@ class Logger {
 
     return {
       filename: logFile,
-      maxsize: 10 * 1024 * 1024,
-      maxFiles: 1,
+      maxsize: 10 * 1024 * 1024 * 1024,
+      maxFiles: 0,
       colorize: false,
       options: {
         flags: 'a'
