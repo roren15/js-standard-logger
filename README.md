@@ -73,6 +73,14 @@ Do log on message and throw error, which recommended to catch outside
 |message|true|message to log|
 |level|false|tag the label according to level field, default to error|
 
+#### Logger.inspect()
+
+inspect object to view
+
+|arguments|required|description|
+|:------:|:------:|------|
+|object|true|inspect object|
+
 #### Logger.stringify()
 
 Transform object to string when logging

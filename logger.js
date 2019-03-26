@@ -89,6 +89,14 @@ class Logger {
   }
 
   /**
+   * get inspected object
+   * @param data
+   */
+  static inspect(data) {
+    return utils.inspect(data)
+  }
+
+  /**
    * execute logger for diff level logging
    * @param message: logging message
    * @param level: logging level

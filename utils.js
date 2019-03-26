@@ -1,5 +1,7 @@
 'use strict'
 
+const util = require('util')
+
 module.exports = {
 
   isArray(obj) {
@@ -102,5 +104,15 @@ module.exports = {
       }
     })
     return res
+  },
+
+  /**
+   * get inspected object
+   * @param obj
+   * @returns {*|string}
+   */
+  inspect(obj) {
+
+    return util.inspect(obj, {depth: 9})
   },
 }
