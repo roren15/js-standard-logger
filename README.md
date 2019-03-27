@@ -22,7 +22,13 @@ logger.exec('it s info') // default for info level output
 //[2018-12-11 09:41:19] [info] [sample-label] --- it s info
 
 logger.exec(`${Logger.stringify({it:'can be object',also:['can','be','array']})}`,Logger.WARN()) // choose diff level
-//[2018-12-11 09:41:19] [warn] [sample-label] --- {"it":"can be object","also":["can","be","array"]}
+//[2019-03-27 14:20:55] [warn] [test] --- {
+//  "it": "can be object",
+//  "also": [
+//    "can",
+//     ...
+//  ]
+//}
 
 logger.exceptionThrows('log and throw err') // do log and throw err, which required try-catch
 //[2018-12-11 09:41:19] [error] [sample-label] --- log and throw err
@@ -88,6 +94,7 @@ Transform object to string when logging
 |arguments|required|description|
 |:------:|:------:|------|
 |object|true|stringify object type to do log|
+|pretty|false|pretty json output, default true|
 
 ### Field
 

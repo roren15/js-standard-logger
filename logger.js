@@ -82,10 +82,11 @@ class Logger {
   /**
    * stringify circular json
    * @param data
+   * @param pretty
    * @returns {*}
    */
-  static stringify(data) {
-    return JSON.stringify(data)
+  static stringify(data, pretty = ture) {
+    return pretty ? JSON.stringify(data, null, 2) : JSON.stringify
   }
 
   /**
