@@ -85,7 +85,7 @@ class Logger {
    * @param pretty
    * @returns {*}
    */
-  static stringify(data, pretty = ture) {
+  static stringify(data, pretty = true) {
     return pretty ? JSON.stringify(data, null, 2) : JSON.stringify
   }
 
